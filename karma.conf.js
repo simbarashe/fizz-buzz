@@ -17,6 +17,7 @@ module.exports = function (config) {
     files: [
       './node_modules/angular/angular.js',                             // angular
       './node_modules/angular-ui-router/release/angular-ui-router.js', // ui-router
+      'https://angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.11.0.js',
       './node_modules/angular-mocks/angular-mocks.js',                 // loads our modules for tests
       './app/services/number-generator/number-generator.js',                                 // our Users factory
       './app/components/number-generator/number-generator.js',                                 // our Users factory
