@@ -1,0 +1,31 @@
+<div class="container">
+    <h3>Buck Fizz Assessment</h3>
+    <div class="row">
+        <div class="table-responsive">
+            <table class="table table-striped table-bordered">
+                <thead>
+                    <tr>
+                        <th>No.</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="x in nc.numberList.slice(((nc.currentPage-1)*nc.itemsPerPage), ((nc.currentPage)*nc.itemsPerPage))">
+                        <td>{{x.number}}</td>
+                        <td>{{x.description}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-9">
+            <pagination class="pagination-md" max-size="nc.maxSize" total-items="nc.totalItems" ng-model="nc.currentPage"
+                class="pagination-sm" items-per-page="nc.itemsPerPage"></pagination>
+        </div>
+        <div class="col-sm-3">
+            Rows On Screen<select class="form-control pull-right " style="width:50%;" ng-model="nc.viewby" ng-options="x.id as x.description for x in nc.tableRows" ng-change="nc.setItemsPerPage(nc.viewby)">
+            </select>
+        </div>
+    </div>
+</div>
